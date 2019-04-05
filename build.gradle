@@ -48,3 +48,9 @@ task runMemberMainUsingSpring(type: JavaExec) {
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
+
+task runMemberMainUsingComponentScan(type: JavaExec) {
+	main = 'org.chltmdwns.book.chap04.MemberMainUsingComponentScan'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
