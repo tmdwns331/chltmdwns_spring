@@ -30,7 +30,7 @@ public class MemberService {
 	}
 
 	public void updateMember() {
-		Member member = memberDao.selectByEmail("3333@naver.com");
+		Member member = memberDao.selectByEmail("st22@naver.com");
 		member.setPassword("b");
 		memberDao.update(member);
 		logger.debug("Update complete.");
@@ -38,8 +38,8 @@ public class MemberService {
 
 	public void insertMember() {
 		Member member = new Member();
-		member.setEmail("3333@naver.com");
-		member.setPassword("chltmdwns");
+		member.setEmail("tmdwnsdt27@naver.com");
+		member.setPassword("tmdwns12");
 		member.setName("최승준");
 		memberDao.insert(member);
 		logger.debug("Insert complete.");

@@ -1,14 +1,13 @@
-
-plugins {             
+plugins {
     id 'java'
-}  
+}
 
 repositories {
     jcenter()
 }
 
 dependencies {
-	// junit for test
+// junit for test
 	implementation 'junit:junit:4.+'
 
 	// mariadb jdbc driver
@@ -23,18 +22,23 @@ dependencies {
 	implementation 'org.apache.logging.log4j:log4j-core:2.+'
 }
 
+task runExampleMain(type: JavaExec) {
+	main = 'org.chltmdwns.book.example.ExampleMain'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
 task docs (dependsOn: javadoc, type: Copy) {
 	from 'build/docs/javadoc'
 	into 'docs'
 }
 
 task runNormalMain(type: JavaExec) {
-	main = 'org.chltmdwns.book.chap02.NormalMain'
+	main = 'org.jungtaekhwan.spring.NormalMain'
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
 task runSpringMain(type: JavaExec) {
-	main = 'org.chltmdwns.book.chap02.SpringMain'
+	main = 'org.jungtaekhwan.spring.SpringMain'
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
@@ -48,24 +52,4 @@ task runMemberMainUsingSpring(type: JavaExec) {
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
-
-task runMemberMainUsingComponentScan(type: JavaExec) {
-	main = 'org.chltmdwns.book.chap04.MemberMainUsingComponentScan'
-	classpath =  sourceSets.main.runtimeClasspath
-}
-
-task runChap08MemberMain(type: JavaExec) {
-	main = 'org.chltmdwns.book.chap08.MemberMain'
-	classpath =  sourceSets.main.runtimeClasspath
-}
-
-task runChap08MemberMainUsingSpring(type: JavaExec) {
-	main = 'org.chltmdwns.book.chap08.MemberMainUsingSpring'
-	classpath =  sourceSets.main.runtimeClasspath
-}
-
-task runArticleMainUsingSpring (type: JavaExec) {
-	main = 'org.chltmdwns.jdbc.spring.ArticleMainUsingSpring'
-	classpath =  sourceSets.main.runtimeClasspath
-}
 

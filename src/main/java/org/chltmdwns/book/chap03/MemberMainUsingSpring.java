@@ -19,7 +19,7 @@ public class MemberMainUsingSpring {
 
 		// registerRequest 초기화
 		RegisterRequest req = new RegisterRequest();
-		req.setEmail("chltmdwns@irafe.com");
+		req.setEmail("chltmdawns@irafe.com");
 		req.setPassword("chltmdwns");
 		req.setName("chltmdwns");
 

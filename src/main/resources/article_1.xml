@@ -6,7 +6,8 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
+	<context:component-scan base-package="org.chltmdwns.book.article_1" />
+	
 	<context:property-placeholder
 		location="classpath:db.properties" />
 
@@ -20,12 +21,4 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="articleDao"
-		class="org.chltmdwns.article.ArticleDaoImplUsingSpringJdbc">
-		<property name="jdbcTemplate" ref="jdbcTemplate" />
-	</bean>
-
-	<bean id="articleService" class="org.chltmdwns.article.ArticleService">
-		<property name="articleDao" ref="articleDao" />
-	</bean>
 </beans>
